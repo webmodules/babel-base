@@ -21,3 +21,7 @@ that use 6to5.
 ## Todo
 
 - Add test code / make rules.
+
+## License
+
+MIT
