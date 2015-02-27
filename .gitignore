@@ -1,3 +1,3 @@
 .DS_Store
-*.js
+build/*
 node_modules
