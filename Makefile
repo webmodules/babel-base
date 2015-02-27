@@ -8,12 +8,13 @@ THIS_DIR:=$(shell cd $(dir $(THIS_MAKEFILE_PATH));pwd)
 BIN := $(THIS_DIR)/node_modules/.bin
 BABEL ?= $(NODE) $(BIN)/babel
 
-ES6_FILES := $(wildcard *.es6)
 JS_FILES := $(wildcard *.js)
+COMPILED_FILES := $(JS_FILES:%.js=build/%.js)
 
-COMPILED_FILES := $(ES6_FILES:.es6=.js)
+build: install builddir $(COMPILED_FILES)
 
-build: install $(COMPILED_FILES)
+builddir:
+	mkdir -p build
 
 install: node_modules
 
@@ -26,5 +27,7 @@ distclean: clean
 node_modules:
 	npm install
 
-%.js: %.es6
+build/%.js: %.js
 	$(BABEL) -i runtime -e $< --out-file $@
+
+.PHONY: build, builddir, install, clean, distclean

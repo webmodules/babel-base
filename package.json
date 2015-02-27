@@ -7,6 +7,7 @@
     "url": "https://github.com/webmodules/YOUR-PROJECT-NAME.git"
   },
   "private": true,
+  "main": "./build/index",
   "version": "1.0.0",
   "dependencies": {
     "babel-runtime": "4"
