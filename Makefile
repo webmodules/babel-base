@@ -18,7 +18,7 @@ build:
 
 install: node_modules
 
-clean: $(COMPILED_FILES)
+clean:
 	rm -r build
 
 distclean: clean
