@@ -11,15 +11,15 @@ BABEL ?= $(NODE) $(BIN)/babel
 JS_FILES := $(wildcard *.js)
 COMPILED_FILES := $(JS_FILES:%.js=build/%.js)
 
-build: install builddir $(COMPILED_FILES)
+compile: $(COMPILED_FILES)
 
-builddir:
+build:
 	mkdir -p build
 
 install: node_modules
 
 clean: $(COMPILED_FILES)
-	rm $(COMPILED_FILES)
+	rm -r build
 
 distclean: clean
 	rm -r node_modules
@@ -27,7 +27,7 @@ distclean: clean
 node_modules:
 	npm install
 
-build/%.js: %.js
+build/%.js: %.js install build
 	$(BABEL) -i runtime -e $< --out-file $@
 
-.PHONY: build, builddir, install, clean, distclean
+.PHONY: compile, build, install, clean, distclean
