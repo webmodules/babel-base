@@ -27,7 +27,7 @@ distclean: clean
 node_modules:
 	npm install
 
-build/%.js: %.js install build
+build/%.js: %.js node_modules build
 	$(BABEL) -i runtime -e $< --out-file $@
 
 .PHONY: compile, build, install, clean, distclean
