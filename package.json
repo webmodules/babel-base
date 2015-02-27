@@ -16,6 +16,6 @@
     "babel": "4"
   },
   "scripts": {
-    "prepublish": "make build"
+    "prepublish": "make"
   }
 }
