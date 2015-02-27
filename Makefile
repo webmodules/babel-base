@@ -30,4 +30,4 @@ node_modules:
 	npm install
 
 build/%.js: %.js node_modules build
-	$(BABEL) -i runtime -e $< --out-file $@
+	$(BABEL) --optional runtime --experimental $< --out-file $@
