@@ -13,21 +13,21 @@ COMPILED_FILES := $(JS_FILES:%.js=build/%.js)
 
 compile: $(COMPILED_FILES)
 
-build:
-	mkdir -p build
-
 install: node_modules
 
 clean:
-	rm -r build
+	rm -rf build
 
 distclean: clean
-	rm -r node_modules
+	rm -rf node_modules
+
+.PHONY: compile, build, install, clean, distclean
+
+build:
+	mkdir -p build
 
 node_modules:
 	npm install
 
 build/%.js: %.js node_modules build
 	$(BABEL) -i runtime -e $< --out-file $@
-
-.PHONY: compile, build, install, clean, distclean
