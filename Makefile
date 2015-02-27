@@ -6,7 +6,7 @@ THIS_DIR:=$(shell cd $(dir $(THIS_MAKEFILE_PATH));pwd)
 
 # BIN directory
 BIN := $(THIS_DIR)/node_modules/.bin
-SIX_TO_FIVE ?= $(NODE) $(BIN)/6to5
+BABEL ?= $(NODE) $(BIN)/babel
 
 ES6_FILES := $(wildcard *.es6)
 JS_FILES := $(wildcard *.js)
@@ -27,4 +27,4 @@ node_modules:
 	npm install
 
 %.js: %.es6
-	$(SIX_TO_FIVE) -i selfContained -e $< --out-file $@
+	$(BABEL) -i runtime -e $< --out-file $@

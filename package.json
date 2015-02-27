@@ -9,10 +9,10 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
-    "6to5-runtime": "3.3.7"
+    "babel-runtime": "4"
   },
   "devDependencies": {
-    "6to5": "3.3.7"
+    "babel": "4"
   },
   "scripts": {
     "prepublish": "make build"
