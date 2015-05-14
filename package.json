@@ -6,11 +6,9 @@
     "type": "git",
     "url": "https://github.com/webmodules/babel-base.git"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
-    "babel-runtime": "4.7.4"
-  },
-  "devDependencies": {
+    "babel-runtime": "4.7.4",
     "babel": "4.7.4"
   }
 }
