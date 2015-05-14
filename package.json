@@ -1,21 +1,16 @@
 {
-  "name": "YOUR-WEBMODULE-NAME",
-  "description": "YOUR-WEBMODULE-DESCRIPTION",
-  "tags": ["webmodule", "browser", "YOUR-TAGS"],
+  "name": "webmodules-babel-base",
+  "description": "Base for babel webmodules",
+  "tags": ["webmodule", "browser", "babel"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/webmodules/YOUR-PROJECT-NAME.git"
+    "url": "https://github.com/webmodules/babel-base.git"
   },
-  "private": true,
-  "main": "./build/index",
   "version": "1.0.0",
   "dependencies": {
     "babel-runtime": "4.7.4"
   },
   "devDependencies": {
     "babel": "4.7.4"
-  },
-  "scripts": {
-    "prepublish": "make"
   }
 }
